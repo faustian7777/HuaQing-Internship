@@ -255,6 +255,9 @@ git push origin main
 # 配置用户名和邮箱
 git config --global user.name "你的名字"
 git config --global user.email "你的邮箱"
+
+# 配置代理
+git config --global http.proxy http://127.0.0.1:53950
 ```
 
 ---
@@ -264,11 +267,29 @@ git config --global user.email "你的邮箱"
 # 安装 conda 后创建环境
 conda create -n myenv python=3.10
 
-# 激活环境
+# 激活虚拟环境
 conda activate myenv
 
 # 安装库
 conda install numpy pandas matplotlib
+
+# 检查Conda版本
+conda
+
+# 更新Conda本身
+conda update conda
+
+# 显示所有环境
+conda env list
+
+# 删除指定环境
+conda env remove -n myenv
+
+# 导出环境配置文件
+conda env export > environment.yml
+
+# 根据配置文件创建环境
+conda env create -f environment.yml
 ```
 
 ---
