@@ -212,19 +212,21 @@ greet("Alice")
 - **文本文件**：`open()`, `read()`, `write()`
 - **上下文管理器**：`with`
 - **CSV 与 JSON 文件处理**
+
 ```python
 # 写入文件
-with open("example.txt", "w") as f:
+with open("Example/example.txt", "w") as f:
     f.write("Hello, Python!\n")
 
 # 读取文件
-with open("example.txt", "r") as f:
+with open("Example/example.txt", "r") as f:
     content = f.read()
     print(content)
 
 # CSV 文件
 import csv
-with open("data.csv", "w", newline="") as f:
+
+with open("Example/data.csv", "w", newline="") as f:
     writer = csv.writer(f)
     writer.writerow(["Name", "Age"])
     writer.writerow(["Alice", 20])
