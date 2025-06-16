@@ -144,16 +144,6 @@ YOLOv8与YOLOv12在网络结构上的差异体现了目标检测模型从CNN主�
 | **拼接点**     | 3处（80×80, 40×40, 20×20）           | 5处（新增216/384通道的高维拼接）       |
 
 ### **3.4.4 典型结构对比**
-**主干网络（Backbone）**：
-```mermaid
-graph LR
-A[640×640×3] --> B[conv3x16] --> C[conv16x32] 
-C --> D[C2f] --> E[conv32x64] --> F[C2f] 
-F --> G[conv64x128] --> H[C2f] --> I[conv128x256] 
-I --> J[C2f] --> K[SPPF]  %% YOLOv8
-G --> L[conv128x128] --> M[A2C2f] --> N[Concat-216] --> O[A2C2f]  %% YOLOv12
-```
-
 **检测头（Neck + Head）**：
 - **YOLOv8**：  
   `SPPF → Upsample → Concat → C2f → Upsample → Concat → C2f → Concat → C2f → Detect`  
